@@ -1,4 +1,6 @@
 from random import randint
+# pip install num2words
+from num2words import num2words
 
 """
 # 1
@@ -476,7 +478,204 @@ while opcao != "5":
         print("Opção inválida")
     opcao = input("(1) adição\n(2) subtração\n(3) multiplicação\n(4) divisão\n(5) Finalizar\nOpção: ")
 
+# 48
+a = 0
+b = 1
+prox = 0
+soma = 0
+print(f"{a} {b} ", end="")
+while prox < 4_000_000:
+    prox = a + b
+    a = b
+    b = prox
+    if prox % 2 == 0 and prox < 4_000_000:
+        soma += prox
+print(f"Soma dos pares da sequência de Fibonacci = {soma}")
+
+# 49
+carlos = 1000
+joao = carlos / 3
+mes = 0
+while joao < carlos:
+    mes += 1
+    carlos *= 1.02
+    joao *= 1.05
+print(f"Quantidade de meses: {mes}")
+
+# 50
+chico = 1.5
+ze = 1.1
+mes = 0
+while ze < chico:
+    mes += 1
+    chico += 0.02
+    ze += 0.03
+print(f"Quantidade de meses: {mes}")
+
+# 51
+salario = 2000
+aumento = 0.015
+ano_atual = int(input("Digite o ano atual: "))
+for _ in range(1996, ano_atual+1):
+    salario += salario * aumento
+    aumento *= 2
+print(f"Em {ano_atual} o salário do funcionário é R${salario:.2f}")
+
+# 52
+saque = int(input("Digite o valor do saque: R$"))
+notas = [100, 50, 20, 10, 5, 2, 1]
+for n in range(0, len(notas)):
+    quant_notas = saque // notas[n]
+    print(f'{quant_notas} notas de {notas[n]}')
+    saque %= notas[n]
+
+# 53
+n = int(input("Digite um número inteiro positivo: "))
+while n < 0:
+    n = int(input("Valor inválido.\nDigite um novo número: "))
+valor = 1
+for i in range(1, n+1):
+    for _ in range(0, i):
+        print(f"{valor}\t", end="")
+        valor += 1
+    print()
+
+# 54
+n = int(input("Digite um número inteiro maior que 1: "))
+while n <= 1:
+    n = int(input("Valor inválido.\nDigite um novo número: "))
+primo = True
+for i in range(2, n):
+    if n % i == 0:
+        primo = False
+        break
+if primo:
+    print(f"O número {n} é primo")
+else:
+    print(f"O número {n} não é primo")
+
+# 55
+n = int(input("Digite a quantidade de números: "))
+while n < 1:
+    n = int(input("Valor inválido.\nDigite um novo número: "))
+cont = 0
+valor = 2
+soma = 0
+while cont < n:
+    primo = True
+    for i in range(2, valor):
+        if valor % i == 0:
+            primo = False
+            break
+    if primo:
+        soma += valor
+        cont += 1
+    valor += 1
+print(soma)
+
+# 56
+valor = 2
+soma = 0
+while valor < 2_000_000:
+    primo = True
+    for i in range(2, valor):
+        if valor % i == 0:
+            primo = False
+            break
+    if primo:
+        print(valor)
+        soma += valor
+    valor += 1
+print(f"Soma = {soma}")
+
+# 57
+a = int(input("Digite um valor para A: "))
+b = int(input("Digite um valor para B: "))
+if a > b:
+    maior = a
+    menor = b
+else:
+    maior = b
+    menor = a
+cont = 0
+for valor in range(menor, maior+1):
+    primo = True
+    for i in range(2, valor):
+        if valor % i == 0:
+            primo = False
+            break
+    if primo:
+        cont += 1
+print(f"Existem {cont} número(s) primo(s) entre {menor} e {maior}")
+
+# 58
+a = int(input("Digite um valor para A: "))
+b = int(input("Digite um valor para B: "))
+if a > b:
+    maior = a
+    menor = b
+else:
+    maior = b
+    menor = a
+soma = 0
+for valor in range(menor, maior+1):
+    primo = True
+    for i in range(2, valor):
+        if valor % i == 0:
+            primo = False
+            break
+    if primo:
+        soma += valor
+print(f"A soma dos número(s) primo(s) entre {menor} e {maior} é {soma}")
+
+# 59
+habitantes = int(input("Digite a quantidade de habitantes: "))
+kwh = float(input("Digite o valor do kwh: R$"))
+consumo = float(input(f"Digite o consumo do habitante {i}: "))
+codigo = int(input("Digite o código do consumidor: "))
+maior = menor = soma = consumo
+consumo1 = consumo2 = consumo3 = 0
+for i in range(2, habitantes+1):
+    consumo = float(input(f"Digite o consumo do habitante {i}: "))
+    codigo = int(input("Digite o código do consumidor: "))
+    while codigo < 1 or codigo > 3:
+        codigo = int(input("Valor inválido. Digite o código do consumidor: "))
+    soma += consumo
+    if codigo == 1:
+        consumo1 += consumo
+    elif codigo == 2:
+        consumo2 += consumo
+    else:
+        consumo3 += consumo
+print(f"Maior consumo = {maior}")
+print(f"Menor consumo = {menor}")
+print(f"Média consumo = {soma / habitantes:.2f}")
+print(f"Consumo categoria 1 = {consumo1}")
+print(f"Consumo categoria 2 = {consumo2}")
+print(f"Consumo categoria 3 = {consumo3}")
+
+# 61
+maior = 0
+maior_i = maior_j = 0
+for i in range(999, 100, -1):
+    for j in range(999, 100, -1):
+        palindromo = i * j
+        v = len(str(palindromo))//2
+        if str(palindromo)[:v] == (str(palindromo)[-v:])[::-1]:
+            if palindromo > maior:
+                maior = palindromo
+                maior_i = i
+                maior_j = j
+            break;
+print(f"Maior palíndromo obtido a partir de dois números de três dígitos: {maior_i} * {maior_j} = {maior}")
+
+# 62
+total = ""
+for n in range(1, 1001):
+    num = num2words(n, lang='pt-BR')
+    total += num.replace(' ', '')
+    print(num)
+
+print(f'Entre 1 e 1000 temos {len(total)} letras.')
 
 """
-
-# 48
