@@ -54,7 +54,7 @@ print(nome.replace('e', 'i'))
 
 print(type(nome))
 
-texto = 'socorram me subino onibus em marrocos'  # Palíndromo
+texto = 'socorram me subi no onibus em marrocos'  # Palíndromo
 print(texto)
 
 print(texto[::-1])

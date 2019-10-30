@@ -4,7 +4,7 @@ Escopo de variáveis
 Dois casos de escopo:
 
 1 - Variáveis globais;
-    - Variáveis globais são reconhecidas, ou seja, seu escopo compreende, todo o o programa.
+    - Variáveis globais são reconhecidas, ou seja, seu escopo compreende, todo o programa.
 
 2 - Variáveis locais;
     - Variáveis locais são reconhecidas apenas no bloco onde foram declaradas, ou seja, seu escopo
