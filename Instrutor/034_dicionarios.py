@@ -164,7 +164,7 @@ Carrinho de Compras:
 
 carrinho = []
 
-produto1 = ['Paystation 4', 1, 2300.00]
+produto1 = ['Playstation 4', 1, 2300.00]
 produto2 = ['God of War 4', 1, 150.00]
 
 carrinho.append(produto1)
