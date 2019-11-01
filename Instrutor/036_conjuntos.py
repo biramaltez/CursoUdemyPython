@@ -66,7 +66,7 @@ conjunto = {99, 2, 34, 23, 2, 12, 1, 44, 5, 34}
 print(f'Conjunto: {conjunto} com {len(conjunto)} elementos')
 
 
-# Assim como todo outro conjunto Python podemos colocar tipos de daods misturados em Sets
+# Assim como todo outro conjunto Python podemos colocar tipos de dados misturados em Sets
 
 s = {1, 'b', True, 34.22, 44}
 print(s)
@@ -91,7 +91,7 @@ print(len(cidades))
 
 # Agora precisamos saber quantas cidades distintas, ou seja, únicas, temos.
 
-# O que você faria? Faria um llop na lista....?
+# O que você faria? Faria um loop na lista....?
 
 # Podemos utilizar o set para isso:
 
